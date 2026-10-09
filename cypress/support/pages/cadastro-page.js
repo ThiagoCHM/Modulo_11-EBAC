@@ -1,6 +1,5 @@
 class CadastroPage {
 
-    //Seletores
     campoNome() {return cy.get('#name')}
     campoEmail() {return cy.get('#email')}
     campoTelefone() {return cy.get('#phone')}

@@ -8,15 +8,11 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cadastroPage.visitarPaginaCadastro()
     });
 
-    afterEach(() => {
-        cy.screenshot()
-    });
-
     it('Deve fazer Cadastro com Sucesso com JS', () => {
         const email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Thiago C. H. Moreira')
         cy.get('#email').type(email)
-        cy.get('#phone').type('11987654321')
+        cy.get('#phone').type('987654321')
         cy.get('#password').type('Teste@123')
         cy.get('#confirm-password').type('Teste@123')
         cy.get('#terms-agreement').check()
@@ -30,7 +26,7 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         const email = faker.internet.email({ firstName, lastName }).toLowerCase();
         cy.get('#name').type(`${firstName} ${lastName}`)
         cy.get('#email').type(email)
-        cy.get('#phone').type('11987654321')
+        cy.get('#phone').type('987654321')
         cy.get('#password').type('Teste@123')
         cy.get('#confirm-password').type('Teste@123')
         cy.get('#terms-agreement').check()
@@ -42,7 +38,7 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
     it('Deve preencher Cadastro com Sucesso com Comando Customizado', () => {
         const email = faker.internet.email();
         const nome = faker.person.fullName({ sex: 'male' })
-        cy.preencherCadastro(nome ,email, '1198765432165', 'Teste@123', 'Teste@123')
+        cy.preencherCadastro(nome ,email, '98765432165', 'Teste@123', 'Teste@123')
         cy.url().should('include', 'dashboard')
     }); 
     
