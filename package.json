@@ -1,16 +1,17 @@
-  {
-    "name": "modulo_11-ebac",
-    "version": "1.0.0",
-    "description": "Teste de UI para o Hub de Leitura da EBAC - Módulo 11.",
-    "main": "index.js",
-    "scripts": {
-      "test": "npx cypress run --browser chrome",
-      "cy:report": "npx cypress run --browser chrome --record --key 375ae404-a8fd-4068-9b53-c086536777be"
-    },
-  }
 {
-    "dependencies": {
-      "@faker-js/faker": "^10.6.0",
-      "cypress": "^16.1.1"
-    }
+  "name": "modulo_11-ebac",
+  "version": "1.0.0",
+  "description": "Teste de UI para o Hub de Leitura da EBAC - Módulo 11.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --browser chrome",
+    "cy:report": "npx cypress run --browser chrome --record --key 375ae404-a8fd-4068-9b53-c086536777be"
+  },
+  "keywords": [testing, cypress, ebac, modulo_11],
+  "author": "Thiago C. H. Moreira",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^10.6.0",
+    "cypress": "^16.1.1"
   }
+}

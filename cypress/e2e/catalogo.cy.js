@@ -6,6 +6,10 @@ describe('Funcionalidade: Catálogo de Livros', () => {
         cy.visit('catalog.html')
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve Clicar em Todos os Botões Adicionar à Cesta', () => {
         cy.get('.btn-primary').click({ multiple: true })
     });
@@ -82,7 +86,7 @@ describe('Funcionalidade: Catálogo de Livros', () => {
                 cy.get('#add-to-cart-btn').click();
                 cy.get('#alert-container').should('contain', 'Livro adicionado à cesta com sucesso!');
             });
+        });
     });
-});
 
 });
