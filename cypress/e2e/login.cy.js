@@ -7,6 +7,10 @@ describe('Funcionalidade: Login', () => {
         cy.visit('login.html')
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve fazer Login com Sucesso', () => {
         cy.get('#email').type('usuario@teste.com')
         cy.get('#password').type('user123')

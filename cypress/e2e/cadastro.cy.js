@@ -8,6 +8,10 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cadastroPage.visitarPaginaCadastro()
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve fazer Cadastro com Sucesso com JS', () => {
         const email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Thiago C. H. Moreira')

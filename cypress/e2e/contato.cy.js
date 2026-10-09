@@ -6,6 +6,10 @@ describe("Funcionalidade: Contato", () => {
     cy.visit('index.html')
   });
 
+  afterEach(() => {
+    cy.screenshot()
+  });
+
   it("Deve preencher formulário de contato com sucesso", () => {
     cy.get('#name').type('Thiago C. H. Moreira')
     cy.get('#email').type('thiago@teste.com')
