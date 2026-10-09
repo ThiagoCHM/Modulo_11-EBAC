@@ -1,25 +1,26 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+class CadastroPage {
+
+    campoNome() { return cy.get('#name') }
+    campoEmail() { return cy.get('#email') }
+    campoTelefone() { return cy.get('#phone') }
+    campoSenha() { return cy.get('#password') }
+    campoConfirmarSenha() { return cy.get('#confirm-password') }
+    checkTermos() { return cy.get('#terms-agreement') }
+    botaoCriarConta() { return cy.get('#register-btn') }
+
+    visitarPaginaCadastro() {
+        cy.visit('register.html')
+    }
+
+    preencherCadastro(nome, email, telefone, senha, confirmaSenha) {
+        if (nome) this.campoNome().clear().type(nome)
+        if (email) this.campoEmail().clear().type(email)
+        this.campoTelefone().clear().type(telefone)
+        this.campoSenha().clear().type(senha)
+        this.campoConfirmarSenha().clear().type(confirmaSenha)
+        this.checkTermos().check()
+        this.botaoCriarConta().click()
+    }
+}
+
+export default new CadastroPage()
